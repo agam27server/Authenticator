@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location-Based Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #c5c5c5, #2d3238);
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 1px;
+            box-shadow: 0 0 15px rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            /* border-radius: 5px; */
+            background: #05e223;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #91ff02;
+            /* box-shadow: 0 0 10px rgb(255, 255, 255); */
+            transform: scale(1.05);
+        }
+
+        .footer{
+            /* letter-spacing: 1px; */
+            word-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Location-Based Authentication</h1>
+        <button onclick="getLocation()">Enter location</button>
+    </div>
+    <div class="footer">
+        <p>Made by Agam</p>
+    </div>
+
+    <script>
+        function getLocation() {
+            const location = prompt("Please enter your location (e.g., Punjab, Haryana, Chandigarh):");
+
+            if (["Punjab", "Haryana", "Chandigarh","punjab", "haryana", "chandigarh"].includes(location)) {
+                const username = prompt("Enter your username:");
+                const password = prompt("Enter your password:");
+
+                if (username === "admin" && password === "admin") {
+                    alert("Access granted. Redirecting to the map...");
+                    if(location == 'chandigarh' || location == 'Chandigarh'){
+                        window.location.href = "https://maps.app.goo.gl/t1qqtpbeDE3WoD177";
+                    }
+                    else if(location == 'Punjab' || location == 'punjab'){
+                        window.location.href = "https://maps.app.goo.gl/aXnCbyMuVkNJRhbH7";
+                    }
+                    else{
+                        window.location.href = "https://maps.app.goo.gl/xCWMc727A47cygJr9";
+                    }
+                } else {
+                    alert("Wrong credentials. Access denied.");
+                }
+            } else {
+                alert("Access denied.");
+            }
+        }
+    </script>
+
+</body>
+</html>
