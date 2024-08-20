@@ -15,49 +15,77 @@
             margin: 0;
             background: linear-gradient(to right, #c5c5c5, #2d3238);
             color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .container {
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
-            border-radius: 1px;
-            box-shadow: 0 0 15px rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
             text-align: center;
+            width: 100%;
+            max-width: 400px;
         }
 
         h1 {
             margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            width: calc(100% - 22px);
-            box-sizing: border-box;
+            font-size: 24px;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            /* border-radius: 5px; */
             background: #05e223;
             color: #fff;
             cursor: pointer;
             font-size: 16px;
-            transition: 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
         }
 
         button:hover {
             background: #91ff02;
-            /* box-shadow: 0 0 10px rgb(255, 255, 255); */
             transform: scale(1.05);
         }
 
-        .footer{
-            /* letter-spacing: 1px; */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
             word-spacing: 5px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+
+            .footer {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
